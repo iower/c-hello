@@ -31,4 +31,8 @@ void main()
 	unsigned char cc = ii;
 	unsigned int jj = cc;
 	printf("%u, %u, %u\n", ii, cc, jj);
+
+	int arr[10] = {0, 1};
+	float f = 1.2f;
+	printf("%d\n", arr[(int)f]);
 }
