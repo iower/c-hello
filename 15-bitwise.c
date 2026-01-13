@@ -31,4 +31,29 @@ void int_to_binary(int x, char* in_str)
 void main()
 {
 	// printf("%b\n", 0b0101);
+	char str1[35] = {};
+	unsigned char a=0b10101010, b=0b10001001;
+	unsigned char res;
+
+	res = a & b;
+
+	int_to_binary(a, str1);
+	printf("%s\n", str1);
+	printf("    &\n");
+	int_to_binary(b, str1);
+	printf("%s\n", str1);
+	printf("==========\n");
+	int_to_binary(res, str1);
+	printf("%s\n", str1);
+
+	res = a | b;
+
+	int_to_binary(a, str1);
+	printf("%s\n", str1);
+	printf("    |\n");
+	int_to_binary(b, str1);
+	printf("%s\n", str1);
+	printf("==========\n");
+	int_to_binary(res, str1);
+	printf("%s\n", str1);
 }
