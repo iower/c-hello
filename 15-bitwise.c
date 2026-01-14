@@ -1,5 +1,15 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+
+#define BIT0 0
+#define BIT1 1
+#define BIT2 2
+#define BIT3 3
+#define BIT4 4
+#define BIT5 5
+#define BIT6 6
+#define BIT7 7
 
 void int_to_binary(int x, char* in_str)
 {
@@ -44,7 +54,7 @@ void main()
 	printf("%s\n", str1);
 	printf("==========\n");
 	int_to_binary(res, str1);
-	printf("%s\n", str1);
+	printf("%s\n\n\n", str1);
 
 	res = a | b;
 
@@ -55,5 +65,47 @@ void main()
 	printf("%s\n", str1);
 	printf("==========\n");
 	int_to_binary(res, str1);
+	printf("%s\n\n\n", str1);
+
+	a = 0b00111000;
+
+	res = a >> 2;
+	int_to_binary(a, str1);
 	printf("%s\n", str1);
+	printf("  a >> 2\n");
+	int_to_binary(res, str1);
+	printf("%s\n\n\n", str1);
+
+	res = a << 2;
+	int_to_binary(a, str1);
+	printf("%s\n", str1);
+	printf("  a << 2\n");
+	int_to_binary(res, str1);
+	printf("%s\n\n\n", str1);
+
+	res = a >> 4;
+	int_to_binary(a, str1);
+	printf("%s\n", str1);
+	printf("  a >> 4\n");
+	int_to_binary(res, str1);
+	printf("%s\n\n\n", str1);
+
+	res = a << 4;
+	int_to_binary(a, str1);
+	printf("%s\n", str1);
+	printf("  a << 4\n");
+	int_to_binary(res, str1);
+	printf("%s\n\n\n", str1);
+
+	res = ~a;
+	int_to_binary(a, str1);
+	printf("%s\n", str1);
+	printf("  ~a\n");
+	int_to_binary(res, str1);
+	printf("%s\n\n\n", str1);
+
+	//
+	// a = 0b11000011;
+	
+
 }
