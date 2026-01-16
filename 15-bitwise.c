@@ -104,8 +104,12 @@ void main()
 	int_to_binary(res, str1);
 	printf("%s\n\n\n", str1);
 
-	//
-	// a = 0b11000011;
 	
-
+	a = 0b11000011;
+	int_to_binary(a, str1);
+	printf("%s\n", str1);
+	a |= ((1 << BIT3) | (1 << BIT4));
+	printf("BIT3, BIT4 to 1\n");
+	int_to_binary(a, str1);
+	printf("%s\n", str1);
 }
