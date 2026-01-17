@@ -111,5 +111,13 @@ void main()
 	a |= ((1 << BIT3) | (1 << BIT4));
 	printf("BIT3, BIT4 to 1\n");
 	int_to_binary(a, str1);
+	printf("%s\n\n\n", str1);
+
+	a = 0b11000011;
+	int_to_binary(a, str1);
 	printf("%s\n", str1);
+	a &= ~((1 << BIT6) | (1 << BIT1));
+	printf("BIT6, BIT1 to 0\n");
+	int_to_binary(a, str1);
+	printf("%s\n\n\n", str1);
 }
