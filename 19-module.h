@@ -6,3 +6,4 @@
 #include <string.h>
 #include <stdlib.h>
 #include "19-ariph.h"
+#include "19-utils.h"
