@@ -1,0 +1,3 @@
+main.o: 20-make.c
+	gcc -O0 -g3 -Wall -c 20-make.c
+	gcc -masm=intel -g3 -Wall -c 20-make.c -S
