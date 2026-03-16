@@ -2,7 +2,7 @@
 
 int main()
 {
-  float xf = 8;
+  float xf = 9;
   float yf = 3;
   float zf = 2;
   float res = xf + yf + zf;
