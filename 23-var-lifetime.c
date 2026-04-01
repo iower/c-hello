@@ -1,6 +1,13 @@
 #include <stdio.h>
 
-void main ()
+void my_counter(void)
+{
+	static int i = 0;
+	printf("my_counter i = %i\n", i);
+	i++;
+}
+
+void main()
 {
 	for (int i = 0; i < 2; i++)
 	{
@@ -16,4 +23,18 @@ void main ()
 		printf("[%i] static_test = %i\n", i, static_test);
 		printf("[%i] register_test = %i\n", i, static_test);
 	}
+
+	printf("=============\n");
+
+	for (int i = 0; i < 3; i++) {
+		static int n = 0;
+		n++;
+		printf("n = %i\n", n);
+	}
+
+	printf("=============\n");
+
+	my_counter();
+	my_counter();
+	my_counter();
 }
