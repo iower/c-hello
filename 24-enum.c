@@ -14,4 +14,27 @@ void main()
 	enum eColor clr;
 	clr = COLOR_GREEN;
 	printf("clr = %i\n", clr);
+
+	//
+
+	typedef enum
+	{
+		SMALL,
+		MIDDLE,
+		LARGE
+	} eSize;
+
+	eSize var_size = LARGE;
+	printf("var_size = %i\n", var_size);
+
+	//
+
+	enum
+	{
+		SMALL2,
+		MIDDLE2,
+		LARGE2,
+	};
+
+	printf("LARGE2 = %i\n", LARGE2);
 }
