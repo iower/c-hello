@@ -1,4 +1,5 @@
 #include <string.h>
+#include <stdio.h>
 
 void main()
 {
@@ -27,5 +28,11 @@ void main()
 		float amount;
 	} goods2;
 
-	goods item2;
+	goods2 item2;
+
+	goods2 item3 = {"Some name", 1};
+	goods2 item4 = {"Another name", 2};
+
+	printf("%s\t%f\n", item3.name, item3.amount);
+	printf("%s\t%f\n", item4.name, item4.amount);
 }
