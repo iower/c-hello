@@ -27,4 +27,19 @@ void main() {
 		unsigned char *p_uch2 = &uch[i];
 		printf("%u | %x | %x \n", i, p_uch2, *p_uch2);
 	}
+
+	printf("%x, %x...\n", p_uch[0], p_uch[1]);
+	printf("uch %x\n", uch);
+
+	unsigned int b;
+	b = 0xaabbccdd;
+	printf("b = 0x%08X\n", b);
+
+	unsigned int *p_b;
+	p_b = &b;
+	printf("p_b = 0x%08X\n", (unsigned int)p_b);
+
+	*p_b = 0x11223344;
+	printf("b = 0x%08X\n", b);
+	printf("p_b = 0x%08X\n", (unsigned int)p_b);
 }
