@@ -37,4 +37,16 @@ void main() {
 
 	unsigned int n = p5_a - p0_a;
 	printf("%i \n\n", n);
+
+	printf("*++p0_a = %x \n", *++p0_a);
+	printf("*++p5_a = %x \n\n", *++p5_a);
+
+	printf("*++p0_a = %x \n", *++p0_a);
+	printf("*++p5_a = %x \n\n", *++p5_a);
+
+	printf("++*p0_a = %x \n", ++*p0_a);
+	printf("++*p5_a = %x \n\n", ++*p5_a);
+
+	printf("++*p0_a = %x \n", ++*p0_a);
+	printf("++*p5_a = %x \n\n", ++*p5_a);
 }
