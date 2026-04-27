@@ -49,4 +49,16 @@ void main() {
 
 	printf("++*p0_a = %x \n", ++*p0_a);
 	printf("++*p5_a = %x \n\n", ++*p5_a);
+
+	unsigned int b[4] = {0x00112233, 0x44556677, 0x8899AABB, 0xCCDDEEFF};
+	for (int i = 0; i < 4; i++)
+	{
+		printf("%p | %08X \n", &b[i], b[i]);
+	}
+	printf("\n");
+
+	unsigned int *p0_b = &b[0], *p2_b = &b[2];
+
+	printf("%p | %08X \n", p0_b, *p0_b);
+	printf("%p | %08X \n", p2_b, *p2_b);
 }
