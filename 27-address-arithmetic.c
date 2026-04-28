@@ -60,5 +60,22 @@ void main() {
 	unsigned int *p0_b = &b[0], *p2_b = &b[2];
 
 	printf("%p | %08X \n", p0_b, *p0_b);
-	printf("%p | %08X \n", p2_b, *p2_b);
+	printf("%p | %08X \n\n", p2_b, *p2_b);
+
+	printf("%08X \n", p0_b[0]);
+	printf("%08X \n", p0_b[1]);
+	printf("%08X \n\n", p0_b[2]);
+
+	printf("%08X \n", p2_b[0]);
+	printf("%08X \n", p2_b[1]);
+	printf("%08X \n\n", p2_b[2]);
+
+	printf("%08X \n", p2_b[-1]);
+	printf("%08X \n", p2_b[-2]);
+	printf("%08X \n\n", p2_b[-3]);
+
+	printf("%08X \n\n", *b);
+	
+	printf("%p | %08X \n", b, *b);
+	printf("%p | %08X \n\n", b+2, *(b+2));
 }
