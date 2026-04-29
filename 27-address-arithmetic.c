@@ -78,4 +78,15 @@ void main() {
 	
 	printf("%p | %08X \n", b, *b);
 	printf("%p | %08X \n\n", b+2, *(b+2));
+
+	printf("The first byte:\n");
+	printf("%08X\n", b);
+	printf("%08X\n", (unsigned char*)b);
+	printf("%08X\n", (unsigned int)(unsigned char*)b);
+	printf("%02X\n\n", *(unsigned char*)b);
+
+	printf("%02X\n", *(((unsigned char*)b)+1) );
+	printf("%02X\n", *(((unsigned char*)b)+2) );
+	printf("%02X\n", *(((unsigned char*)b)+3) );
+
 }
