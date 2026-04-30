@@ -87,6 +87,15 @@ void main() {
 
 	printf("%02X\n", *(((unsigned char*)b)+1) );
 	printf("%02X\n", *(((unsigned char*)b)+2) );
-	printf("%02X\n", *(((unsigned char*)b)+3) );
+	printf("%02X\n\n", *(((unsigned char*)b)+3) );
 
+	printf("bytes of b:\n");
+	printf("%p \n", &b);
+	printf("%p \n\n", &b[0]);
+
+	for (int i = 0; i < 16; i++)
+	{
+		printf("%p | %02X\n", ((unsigned char*)b)+i, *((unsigned char*)b+i));
+	}
+	
 }
