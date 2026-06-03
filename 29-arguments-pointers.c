@@ -37,6 +37,29 @@ void my_div_p(float a_f, float b_f,float *div_f)
 	*div_f = a_f / b_f;
 }
 
+typedef struct
+{
+	char nm[60];
+	unsigned char age;
+	unsigned char course;
+} student;
+
+void print_student(student *st_p)
+{
+	printf("%-30s | %d course | %d age\n", st_p->nm, st_p->course, st_p->age);
+}
+
+void print_student_void(void *st_p)
+{
+	typedef struct
+	{
+		char nm[60];
+		unsigned char age;
+		unsigned char course;
+	} stdn;
+	printf("%-30s | %d course | %d age\n", ((stdn*)st_p)->nm, ((stdn*)st_p)->course, ((stdn*)st_p)->age);
+}
+
 void main()
 {
 	char c_str[] = "a";
@@ -81,4 +104,12 @@ void main()
 
 	my_div_p(10., 3., &res);
 	printf("sum %f\n", res);
+
+	student st;
+	strcpy(st.nm, "Name Surname");
+	st.age = 18;
+	st.course = 2;
+
+	print_student(&st);
+	print_student_void(&st);
 }
