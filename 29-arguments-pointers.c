@@ -60,6 +60,14 @@ void print_student_void(void *st_p)
 	printf("%-30s | %d course | %d age\n", ((stdn*)st_p)->nm, ((stdn*)st_p)->course, ((stdn*)st_p)->age);
 }
 
+void add_student(student *res_st, unsigned int *student_counter, char *ch, unsigned int cr, unsigned int ag)
+{
+	strcpy(res_st->nm, ch);
+	res_st->course = cr;
+	res_st->age = ag;
+	(*student_counter)++;
+}
+
 void main()
 {
 	char c_str[] = "a";
@@ -112,4 +120,14 @@ void main()
 
 	print_student(&st);
 	print_student_void(&st);
+
+	printf("-\n");
+	student students[20];
+	unsigned int st_cnt = 0;
+	for(int i=0; i<10; i++) add_student(&students[st_cnt], &st_cnt, "Student", i, 10+i);
+
+	for(int i=0; i<st_cnt; i++) print_student(&students[i]);
+	printf("-\n");
+
+	for(int i=0; i<st_cnt; i++) print_student(students+i);
 }
