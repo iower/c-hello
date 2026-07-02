@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 void print_str(const char *c_str)
 {
@@ -13,6 +14,48 @@ void my_mul_p(float a_f, float b_f, float *mul_f)
 void my_sub_p(float a_f, float b_f, float *sub_f)
 {
   *sub_f = a_f - b_f;
+}
+
+typedef struct
+{
+	char nm[60];
+	unsigned char age;
+	unsigned char course;
+} student;
+
+typedef struct
+{
+	student *st;
+	void (*addCourse)(student *st);
+	void (*addAge)(student *st);
+	void (*modifyName)(student *st, char *ch);
+	void (*deletePos)(student *st_list, unsigned int pos, unsigned int *student_counter);
+} student_list;
+
+void addCourse(student *st)
+{
+	st->course++;
+}
+
+void addAge(student *st)
+{
+	st->age++;
+}
+
+void modifyName(student *st, char *ch)
+{
+	strcpy(st->nm, ch);
+}
+
+void deletePos(student *st_list, unsigned int pos, unsigned int *student_counter)
+{
+	for(unsigned int i=pos; i<*student_counter-1; i++)
+	{
+		strcpy(st_list[i].nm, st_list[i+1].nm);
+		st_list[i].age = st_list[i+1].age;
+		st_list[i].course = st_list[i+1].course;
+	}
+	(*student_counter)--;
 }
 
 void main()
