@@ -58,6 +58,29 @@ void deletePos(student *st_list, unsigned int pos, unsigned int *student_counter
 	(*student_counter)--;
 }
 
+void add_student(student *res_st, unsigned int *student_counter, char *ch, unsigned int cr, unsigned int ag)
+{
+	strcpy(res_st->nm, ch);
+	res_st->course = cr;
+	res_st->age = ag;
+	(*student_counter)++;
+}
+
+void print_student(student *st_p)
+{
+	printf("%-30s | %d course | %d age\n", st_p->nm, st_p->course, st_p->age);
+}
+
+void list(student *st, unsigned int *st_cnt)
+{
+	for (int i=0; i<(*st_cnt); i++)
+	{
+		printf("%d | ", i);
+		print_student(st+i);
+	}
+	printf("\n");
+}
+
 void main()
 {
 	unsigned int *print_str_addr;
@@ -79,4 +102,33 @@ void main()
 		arith_operations[i](a, b, &res);
 		printf("Op %d: res = %f\n", i, res);
 	}
+
+	student st[20];
+	unsigned int st_cnt = 0;
+
+	for(int i=0; i<8; i++)
+	{
+		add_student(st+st_cnt, &st_cnt, "Aaa Bbb", i, 18+i);
+	}
+
+	list(st, &st_cnt);
+
+	student_list st_list =
+	{
+		st,
+		addCourse,
+		addAge,
+		modifyName,
+		deletePos
+	};
+
+	st_list.addCourse(st+5);
+	st_list.addAge(st+1);
+	st_list.modifyName(st+2, "Changed name");
+
+	list(st, &st_cnt);
+
+	st_list.deletePos(st, 4, &st_cnt);
+
+	list(st, &st_cnt);
 }
