@@ -90,4 +90,17 @@ void main()
 	my_arg2.bit1 = 0b1;
 	my_arg2.b = 0x7654;
 
+	printf("my_arg2 = 0x%08X\n", *(unsigned int*)&my_arg2);
+
+	*(unsigned int*)&my_arg2 = 0x89ABCDEF;
+	int_to_binary(*(unsigned int*)&my_arg2, str1);
+	printf("my_arg2 = %s\n", str1);
+
+	printf("tetr0 = %01X\n", my_arg2.tetr0);
+	printf("tetr1 = %01X\n", my_arg2.tetr1);
+	printf("diad1 = %01X\n", my_arg2.diad1);
+	printf("diad2 = %01X\n", my_arg2.diad2);
+	printf("triad1 = %01X\n", my_arg2.triad1);
+	printf("bit1 = %01X\n", my_arg2.bit1);
+	printf("b = 0x%04X\n", my_arg2.b);
 }
